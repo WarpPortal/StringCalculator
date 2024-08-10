@@ -14,13 +14,18 @@ public class MathOperators {
 
     public static void sub(String str) {
         if (str.contains(" - ")) {
-            str = str.replace(" - ", " ");
-            sArr = str.split(" ");
-            if (sArr[0].equals(sArr[1])) {
-                System.out.println(" ");
-            } else {
-                System.out.println(kavichki(sArr[0]));
+            sArr = str.split(" - ");
+            int a = sArr[0].length();
+            int b = sArr[1].length();
+            int razn = a - b;
+            char[] c = str.toCharArray();
+            String s = "";
+
+            for (int i = 0; i < razn; i++) {
+                s += c[i];
             }
+
+            System.out.println(kavichki(s));
         }
     }
 
@@ -60,11 +65,11 @@ public class MathOperators {
 
             int a = sArr[0].length();
             int b = Integer.parseInt(sArr[1]);
-            int sum = a/b;
+            int sum = a / b;
             String s = "";
             char[] c = str.toCharArray();
 
-            for (int i = 0; i<sum; i++){
+            for (int i = 0; i < sum; i++) {
                 s += c[i];
             }
             System.out.println(kavichki(s));
@@ -73,7 +78,7 @@ public class MathOperators {
     }
 
 
-    public static String kavichki(String str){
+    public static String kavichki(String str) {
         return "\"" + str + "\"";
     }
 }
