@@ -17,7 +17,7 @@ public class MathOperators {
             sArr = str.split(" - ");
             int a = sArr[0].indexOf(sArr[1]);
             if (a == -1) {
-
+                System.out.println(kavichki(sArr[0]));
             } else {
                 String result = sArr[0].substring(0, a);
                 result += sArr[0].substring(a + sArr[1].length());
