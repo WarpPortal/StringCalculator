@@ -15,17 +15,14 @@ public class MathOperators {
     public static void sub(String str) {
         if (str.contains(" - ")) {
             sArr = str.split(" - ");
-            int a = sArr[0].length();
-            int b = sArr[1].length();
-            int razn = a - b;
-            char[] c = str.toCharArray();
-            String s = "";
+            int a = sArr[0].indexOf(sArr[1]);
+            if (a == -1) {
 
-            for (int i = 0; i < razn; i++) {
-                s += c[i];
+            } else {
+                String result = sArr[0].substring(0, a);
+                result += sArr[0].substring(a + sArr[1].length());
+                System.out.println(kavichki(result));
             }
-
-            System.out.println(kavichki(s));
         }
     }
 
